@@ -29,9 +29,9 @@ Get the IP addresses of the docker machines, type `docker-machine ls`, the outpu
 
 Create `inventory` contained SSH connection information of the machines for ansible delpoyment. The infomation are constructed at `Dockerfile` and `docker-compose.yml`, which
 
-* username: root
-* password: 123
-* SSH port: 2222
+* username: `root`
+* password: `123`
+* SSH port: `2222`
 
     $ vi hosts
     master1 ansible_ssh_host=192.168.99.100 ansible_ssh_port=2222 ansible_ssh_user=root ansible_ssh_pass=123
