@@ -39,6 +39,10 @@ Create `inventory`
     master1 ansible_ssh_host=192.168.99.100 ansible_ssh_port=2222 ansible_ssh_user=root ansible_ssh_pass=123
     master2 ansible_ssh_host=192.168.99.101 ansible_ssh_port=2222 ansible_ssh_user=root ansible_ssh_pass=123
 
+Ignore SSH key fingerprint asking
+
+    $ export ANSIBLE_HOST_KEY_CHECKING=False
+
 Run ansible command to deploy
 
     $ ansible-playbook -i inventory playbook.yml
