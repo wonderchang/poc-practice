@@ -27,13 +27,15 @@ Get the IP addresses of the docker machines, type `docker-machine ls`, the outpu
     master1   -        virtualbox   Running   tcp://192.168.99.100:2376           v1.13.0
     master2   -        virtualbox   Running   tcp://192.168.99.101:2376           v1.13.0
 
-Create `inventory` contained SSH connection information of the machines for ansible delpoyment. The infomation are constructed at `Dockerfile` and `docker-compose.yml`, which
+Prepare the SSH connection information of the machines for ansible delpoyment. The infomation are constructed at `Dockerfile` and `docker-compose.yml`, which
 
-* username: `root`
-* password: `123`
-* SSH port: `2222`
+ * username: `root`
+ * password: `123`
+ * ssh port: `2222`
 
-    $ vi hosts
+Create `inventory`
+
+    $ vi inventory
     master1 ansible_ssh_host=192.168.99.100 ansible_ssh_port=2222 ansible_ssh_user=root ansible_ssh_pass=123
     master2 ansible_ssh_host=192.168.99.101 ansible_ssh_port=2222 ansible_ssh_user=root ansible_ssh_pass=123
 
