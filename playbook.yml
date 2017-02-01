@@ -2,23 +2,23 @@
 - hosts: master1
   remote_user: root
   tasks:
-    - name: Update repositories cache and install Nginx
+    - name: Update repositories cache and install MariaDB
       apt:
-        name: nginx
+        name: mariadb-server
         update_cache: yes
     - name: Start Nginx service
       service:
-        name: nginx
+        name: mysql
         state: started
 
 - hosts: master2
   remote_user: root
   tasks:
-    - name: Update repositories cache and install Nginx
+    - name: Update repositories cache and install MariaDB
       apt:
-        name: nginx
+        name: mariadb-server
         update_cache: yes
     - name: Start Nginx service
       service:
-        name: nginx
+        name: mysql
         state: started
