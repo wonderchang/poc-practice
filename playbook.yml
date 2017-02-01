@@ -1,0 +1,24 @@
+---
+- hosts: master1
+  remote_user: root
+  tasks:
+    - name: Update repositories cache and install Nginx
+      apt:
+        name: nginx
+        update_cache: yes
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+
+- hosts: master2
+  remote_user: root
+  tasks:
+    - name: Update repositories cache and install Nginx
+      apt:
+        name: nginx
+        update_cache: yes
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
