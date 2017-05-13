@@ -1,6 +1,4 @@
-# Build Virtual Cluster by Docker Machine
-
-## Build
+# Virtual Cluster Setup by Docker Machine
 
 The build create two SSH server `server1` and `server2`.
 
