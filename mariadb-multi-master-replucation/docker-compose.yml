@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  master:
+    build:
+      context: .
+      args:
+        USER: foo
+        AUTHORIZED_KEY_PATH: id_rsa.pub
+    ports:
+      - "2222:22"
+      - "3306:3306"

@@ -1,0 +1,8 @@
+---
+- hosts: master1
+  roles:
+    - debops.mariadb
+
+- hosts: master2
+  roles:
+    - debops.mariadb
