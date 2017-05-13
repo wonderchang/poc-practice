@@ -1,4 +1,4 @@
 # POC practice
 
-* [Build Virtual Cluster by Docker Machine](build-virtual-cluster-by-docker-machine)
-* [MariaDB Multi-master Replication](mariadb-multi-master-replication)
+* [Virtual Cluster Setup by Docker Machine](subjects/virtual-cluster-setup-by-docker-machine)
+* [MariaDB Multi-master Replication](subjects/mariadb-multi-master-replication)
