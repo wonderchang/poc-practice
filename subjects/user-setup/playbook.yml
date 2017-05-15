@@ -1,0 +1,17 @@
+---
+- hosts: server
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: Create foo user
+      user:
+        name: foo
+        shell: /bin/bash
+        # $ python -c 'import crypt; print crypt.crypt("foo", "foo")'
+        password: foKntnEF3KSXA
+    - name: Create bar user
+      user:
+        name: bar
+        shell: /bin/bash
+        # $ python -c 'import crypt; print crypt.crypt("bar", "bar")'
+        password: bab.5ZXQdbvEo

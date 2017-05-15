@@ -1,0 +1,4 @@
+server:
+  image: wonderchang/poc-practice-ubuntu-ssh
+  ports:
+    - "2222:22"
