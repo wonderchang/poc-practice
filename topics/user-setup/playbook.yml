@@ -3,12 +3,17 @@
   become: yes
   become_method: sudo
   tasks:
-    - name: Create foo user
+    - name: Add admin group
+      group:
+        name: admin
+        state: present
+    - name: Create foo user and add to admin group
       user:
         name: foo
         shell: /bin/bash
         # $ python -c 'import crypt; print crypt.crypt("foo", "foo")'
         password: foKntnEF3KSXA
+        group: admin
     - name: Create bar user
       user:
         name: bar
