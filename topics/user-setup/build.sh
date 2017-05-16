@@ -16,5 +16,5 @@ eval $(docker-machine env $HOSTNAME)
 
 # Deploy the user initialization
 ip=$(/usr/local/bin/docker-machine ls | grep "^$HOSTNAME " | awk '{print $5}' | grep -o "192\.168\.[0-9]*\.[0-9]*")
-echo "server ansible_ssh_host=$ip ansible_ssh_port=2222 ansible_ssh_user=$USERNAME ansible_ssh_pass=$PASSWORD ansible_become_pass=$PASSWORD" > inventory
+echo "$HOSTNAME ansible_ssh_host=$ip ansible_ssh_port=2222 ansible_ssh_user=$USERNAME ansible_ssh_pass=$PASSWORD ansible_become_pass=$PASSWORD" > inventory
 /usr/local/bin/ansible-playbook -i inventory playbook.yml

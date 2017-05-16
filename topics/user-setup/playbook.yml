@@ -3,17 +3,24 @@
   become: yes
   become_method: sudo
   tasks:
-    - name: Add admin group
+    - name: Make sure we have a 'wheel' group
       group:
-        name: admin
+        name: wheel
         state: present
+    - name: Allow 'wheel' group to have passwordless sudo
+      lineinfile:
+        dest: /etc/sudoers.d/ubuntu
+        state: present
+        regexp: '^%wheel'
+        line: '%wheel ALL=(ALL) ALL'
+        validate: visudo -cf %s
     - name: Create foo user and add to admin group
       user:
         name: foo
         shell: /bin/bash
         # $ python -c 'import crypt; print crypt.crypt("foo", "foo")'
         password: foKntnEF3KSXA
-        group: admin
+        group: wheel
     - name: Create bar user
       user:
         name: bar
