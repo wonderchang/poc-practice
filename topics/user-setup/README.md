@@ -1,13 +1,13 @@
 # User Setup using Ansible
 
+	$ ./build.sh
+
 Build info:
 
 * Docker Machine: `server`
 * Docker Image: [wonderchang/poc-practice-ubuntu-ssh](https://hub.docker.com/r/wonderchang/poc-practice-ubuntu-ssh/) ([Dockerfile](../../dockerfiles/ubuntu-ssh/Dockerfile))
 * SSH Service port: `2222`
 * Admin User: `ubuntu/ubuntu`
-
-    $ ./build.sh
 
 Build procedure:
 
